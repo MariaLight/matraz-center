@@ -1,11 +1,24 @@
+let burger = document.querySelector('#burger');
+let menu = document.querySelector('.burger-menu__wrapper');
+let closeBtn = document.querySelector('#close-menu');
+
+burger.addEventListener('click', function() {
+    menu.classList.remove('burger-menu__wrapper--none');
+})
+closeBtn.addEventListener('click', function () {
+    menu.classList.add('burger-menu__wrapper--none');
+})
+
 const swiperMain = new Swiper('.swiper__main', {
-    loop: true,
+    // loop: true,
     effect: "fade",
     speed: 1000,
 
-    autoplay: {
-        delay: 3000,
-    },
+    // autoplay: {
+    //     delay: 3000,
+    // },
+
+    
 
     // Navigation arrows
     navigation: {
@@ -15,16 +28,32 @@ const swiperMain = new Swiper('.swiper__main', {
 
 });
 
+
+
 const swiperOffers = new Swiper('.swiper__offers', {
     loop: false,
     speed: 1000,
     slidesPerView: 4,
     spaceBetween: 20,
 
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+
+        },
+        640: {
+            slidesPerView: 2,
+
+        },
+        1024: {
+            slidesPerView: 4,
+
+        }
+    },
     // Navigation arrows
     navigation: {
-        nextEl: '.best-offers__top .swiper-button-next',
-        prevEl: '.best-offers__top .swiper-button-prev',
+        nextEl: '.swiper-button-next__offers',
+        prevEl: '.swiper-button-prev__offers',
     },
 
 });
@@ -35,10 +64,25 @@ const swiperSales = new Swiper('.sales .swiper__offers', {
     slidesPerView: 4,
     spaceBetween: 20,
 
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+
+        },
+        640: {
+            slidesPerView: 2,
+
+        },
+        1024: {
+            slidesPerView: 4,
+
+        }
+    },
+
     // Navigation arrows
     navigation: {
-        nextEl: '.sales .best-offers__top .swiper-button-next',
-        prevEl: '.sales .best-offers__top .swiper-button-prev',
+        nextEl: '.sales .swiper-button-next',
+        prevEl: '.sales .swiper-button-prev',
     },
 
 });
@@ -49,10 +93,25 @@ const swiperNewProducts = new Swiper('.new-products .swiper__offers', {
     slidesPerView: 4,
     spaceBetween: 20,
 
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+
+        },
+        640: {
+            slidesPerView: 2,
+
+        },
+        1024: {
+            slidesPerView: 4,
+
+        }
+    },
+
     // Navigation arrows
     navigation: {
-        nextEl: '.new-products .best-offers__top .swiper-button-next',
-        prevEl: '.new-products .best-offers__top .swiper-button-prev',
+        nextEl: '.new-products .swiper-button-next',
+        prevEl: '.new-products .swiper-button-prev',
     },
 
 });
@@ -62,6 +121,20 @@ const swiperVideo = new Swiper('.swiper__video', {
     speed: 1000,
     slidesPerView: 2,
     spaceBetween: 10,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+
+        },
+        640: {
+            slidesPerView: 1,
+
+        },
+        1024: {
+            slidesPerView: 2,
+
+        }
+    },
 
     // Navigation arrows
     navigation: {
@@ -77,11 +150,61 @@ const swiperBrands = new Swiper('.swiper__brands', {
     slidesPerView: 5,
     spaceBetween: 24,
 
+    breakpoints: {
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+
+        },
+        640: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+
+
+        },
+        1024: {
+            slidesPerView: 5,
+            spaceBetween: 24,
+
+
+        }
+    },
+
     // Navigation arrows
     navigation: {
         nextEl: '.brands .swiper-button-next',
         prevEl: '.brands .swiper-button-prev',
     },
+
+});
+
+const swiperCategories = new Swiper('.swiper__categories', {
+    loop: false,
+    speed: 1000,
+    slidesPerView: 7,
+    spaceBetween: 0,
+
+    breakpoints: {
+        320: {
+            slidesPerView: 2,
+
+
+        },
+        640: {
+            slidesPerView: 3,
+
+        },
+        1024: {
+            slidesPerView: 7,
+            // spaceBetween: 18,
+
+
+        }
+    },
+    pagination: {
+        el: '.banner .swiper-pagination',
+    },
+
 
 });
 
@@ -96,6 +219,23 @@ gallerySliders.forEach(function (slider) {
         speed: 1000,
         slidesPerView: 4,
         spaceBetween: 20,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+
+
+            },
+            640: {
+                slidesPerView: 2,
+
+            },
+            1024: {
+                slidesPerView: 4,
+                // spaceBetween: 18,
+
+
+            }
+        },
 
         // Navigation arrows
         navigation: {
@@ -111,6 +251,7 @@ gallerySliders.forEach(function (slider) {
 
 const tabs = document.querySelectorAll(".contacts__tab");
 const contents = document.querySelectorAll(".contacts__content");
+if (tabs) {
 
 // запускаем цикл для каждой вкладки и добавляем на неё событие
 for (let i = 0; i < tabs.length; i++) {
@@ -132,90 +273,37 @@ for (let i = 0; i < tabs.length; i++) {
 
     });
 }
+}
 
+const tabsProduct = document.querySelectorAll(".product-main__tab");
+const contentsProduct = document.querySelectorAll(".product-main__content");
+if (tabsProduct) {
+    console.log(tabsProduct);
+    
+for (let i = 0; i < tabsProduct.length; i++) {
+    tabsProduct[i].addEventListener("click", (event) => {
+
+        let tabsChildren = event.target.parentElement.children;
+        for (let t = 0; t < tabsChildren.length; t++) {
+            tabsChildren[t].classList.remove("product-main__tab--active");
+        }
+        // добавляем активный класс
+        tabsProduct[i].classList.add("product-main__tab--active");
+        // теперь нужно удалить активный класс с блоков содержимого вкладок
+        let tabContentChildren = event.target.parentElement.nextElementSibling.children;
+        for (let c = 0; c < tabContentChildren.length; c++) {
+            tabContentChildren[c].classList.remove("product-main__content--active");
+        }
+        // добавляем активный класс
+        contentsProduct[i].classList.add("product-main__content--active");
+
+    });
+}
+}
+let select = document.querySelectorAll('select');
+if (select) {
 customSelect('select');
-
-
-(function ($) {
-
-    $('#price-range-submit').hide();
-
-    $("#min_price,#max_price").on('change', function () {
-
-        $('#price-range-submit').show();
-
-        var min_price_range = parseInt($("#min_price").val());
-
-        var max_price_range = parseInt($("#max_price").val());
-
-        if (min_price_range > max_price_range) {
-            $('#max_price').val(min_price_range);
-        }
-
-        $("#slider-range").slider({
-            values: [min_price_range, max_price_range]
-        });
-
-    });
-
-
-    $("#min_price,#max_price").on("paste keyup", function () {
-
-        $('#price-range-submit').show();
-
-        var min_price_range = parseInt($("#min_price").val());
-
-        var max_price_range = parseInt($("#max_price").val());
-
-        if (min_price_range == max_price_range) {
-
-            max_price_range = min_price_range + 100;
-
-            $("#min_price").val(min_price_range);
-            $("#max_price").val(max_price_range);
-        }
-
-        $("#slider-range").slider({
-            values: [min_price_range, max_price_range]
-        });
-
-    });
-
-
-    $(function () {
-        $("#slider-range").slider({
-            range: true,
-            orientation: "horizontal",
-            min: 1200,
-            max: 250000,
-            values: [1200, 250000],
-            step: 100,
-
-            slide: function (event, ui) {
-                if (ui.values[0] == ui.values[1]) {
-                    return false;
-                }
-
-                $("#min_price").val(ui.values[0]);
-                $("#max_price").val(ui.values[1]);
-            }
-        });
-
-        $("#min_price").val($("#slider-range").slider("values", 0));
-        $("#max_price").val($("#slider-range").slider("values", 1));
-
-    });
-
-    $("#slider-range,#price-range-submit").click(function () {
-
-        var min_price = $('#min_price').val();
-        var max_price = $('#max_price').val();
-
-        // $("#searchResults").text("Here List of products will be shown which are cost between " + min_price + " " + "and" + " " + max_price + ".");
-    });
-
-
-})(jQuery);
+}
 
 
 function validate(evt) {
@@ -234,4 +322,24 @@ function validate(evt) {
         if (theEvent.preventDefault) theEvent.preventDefault();
     }
 }
+
+let filterBtn = document.querySelector('#filters-open');
+let filters = document.querySelector('#filters');
+let filtersMobile = document.querySelector('.filters--mobile');
+if (filtersMobile) {
+let filtersSelect = filtersMobile.querySelector('.custom-select-opener');
+}
+if (filterBtn) {
+filterBtn.addEventListener('click', function() {
+    filters.classList.toggle('filters__options--mobile-open');
+
+})
+filtersSelect.addEventListener('click', function () {
+    
+    filters.classList.remove('filters__options--mobile-open');
+
+})
+}
+
+
 
