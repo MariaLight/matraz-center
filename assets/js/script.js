@@ -207,10 +207,12 @@ const swiperCategories = new Swiper('.swiper__categories', {
 
 
 });
-
+let fancy = document.querySelectorAll('data-fancybox');
+if (fancy){
 Fancybox.bind("[data-fancybox]", {
     // Your custom options
 });
+}
 
 let gallerySliders = document.querySelectorAll('.swiper__gallery');
 gallerySliders.forEach(function (slider) {
