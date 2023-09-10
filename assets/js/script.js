@@ -9,6 +9,9 @@ closeBtn.addEventListener('click', function () {
     menu.classList.add('burger-menu__wrapper--none');
 })
 
+let swiper1 = document.querySelector('.swiper__main');
+if (swiper1) {
+
 const swiperMain = new Swiper('.swiper__main', {
     // loop: true,
     effect: "fade",
@@ -27,9 +30,11 @@ const swiperMain = new Swiper('.swiper__main', {
     },
 
 });
+}
 
 
-
+let swiper2 = document.querySelector('.swiper__offers');
+if (swiper2) {
 const swiperOffers = new Swiper('.swiper__offers', {
     loop: false,
     speed: 1000,
@@ -57,7 +62,9 @@ const swiperOffers = new Swiper('.swiper__offers', {
     },
 
 });
-
+}
+let swiper3 = document.querySelector('.sales .swiper__offers');
+if (swiper3) {
 const swiperSales = new Swiper('.sales .swiper__offers', {
     loop: false,
     speed: 1000,
@@ -86,7 +93,9 @@ const swiperSales = new Swiper('.sales .swiper__offers', {
     },
 
 });
-
+}
+let swiper4 = document.querySelector('.new-products .swiper__offers');
+if (swiper4) {
 const swiperNewProducts = new Swiper('.new-products .swiper__offers', {
     loop: false,
     speed: 1000,
@@ -115,7 +124,7 @@ const swiperNewProducts = new Swiper('.new-products .swiper__offers', {
     },
 
 });
-
+}
 const swiperVideo = new Swiper('.swiper__video', {
     loop: false,
     speed: 1000,
@@ -207,12 +216,7 @@ const swiperCategories = new Swiper('.swiper__categories', {
 
 
 });
-let fancy = document.querySelectorAll('data-fancybox');
-if (fancy){
-Fancybox.bind("[data-fancybox]", {
-    // Your custom options
-});
-}
+
 
 let gallerySliders = document.querySelectorAll('.swiper__gallery');
 gallerySliders.forEach(function (slider) {
@@ -342,6 +346,11 @@ filtersSelect.addEventListener('click', function () {
 
 })
 }
-
+let fancy = document.querySelectorAll('data-fancybox');
+if (fancy) {
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
+}
 
 
