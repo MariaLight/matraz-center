@@ -6414,12 +6414,142 @@ input::-webkit-inner-spin-button {
         width: 100%;
         margin-right: 0 !important;
     }
-        .refund__submit {
-            flex-direction: column;
-            gap: 2rem;
-        }
+
+    .refund__submit {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
 .custom-select-container {
     z-index: 30;
+}
+
+
+/* Статья */
+.section-article__wrapper {
+    max-width: 66.25rem;
+    margin: 0 auto;
+}
+
+.article__content>img {
+    margin-bottom: 2.5rem;
+}
+
+.article__content>* {
+    margin-bottom: 2.5rem;
+}
+
+.article__content>h2 {
+    font-size: 1.875rem;
+}
+
+.article__content {
+    padding-bottom: 5.375rem;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.article__share {
+    padding: 1.625rem 0;
+    margin-bottom: 7.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.share-socials .footer-socials__link {
+    background-color: var(--color-bg-pink);
+
+}
+
+.article-share__main {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1.25rem
+}
+
+.article-share__title {
+    color: var(--color-black);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.share-socials {
+    gap: .75rem;
+}
+
+.article-share__btn {
+    background-color: transparent;
+}
+
+.article-share__btn:hover {
+    background-color: var(--color-bg-pink);
+}
+
+@media (max-width: 1024px) {
+    .article-share__title {
+        font-size: 2rem;
+    }
+
+    .share-socials {
+        gap: 1.5rem;
+    }
+
+    .article-share__main {
+        gap: 1.5rem
+    }
+
+    .article__share {
+        padding: 2.6rem 0;
+        margin-bottom: 2.4rem;
+    }
+
+    .article__content {
+        padding-bottom: 4rem;
+    }
+
+    .article__content>img {
+        margin-bottom: 4rem;
+    }
+
+    .article__content>* {
+        margin-bottom: 4rem !important;
+    }
+
+    .article__content>h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .section-article__wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .article__share {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .article__content>img {
+        margin-bottom: 2rem;
+    }
+
+    .article__content>* {
+        margin-bottom: 2rem !important;
+    }
+
+    .article__content>h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .article-share__title {
+        font-size: 1.6rem;
+    }
 }
