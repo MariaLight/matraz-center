@@ -2,7 +2,7 @@ let burger = document.querySelector('#burger');
 let menu = document.querySelector('.burger-menu__wrapper');
 let closeBtn = document.querySelector('#close-menu');
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     menu.classList.remove('burger-menu__wrapper--none');
 })
 closeBtn.addEventListener('click', function () {
@@ -12,118 +12,118 @@ closeBtn.addEventListener('click', function () {
 let swiper1 = document.querySelector('.swiper__main');
 if (swiper1) {
 
-const swiperMain = new Swiper('.swiper__main', {
-    // loop: true,
-    effect: "fade",
-    speed: 1000,
+    const swiperMain = new Swiper('.swiper__main', {
+        // loop: true,
+        effect: "fade",
+        speed: 1000,
 
-    // autoplay: {
-    //     delay: 3000,
-    // },
+        // autoplay: {
+        //     delay: 3000,
+        // },
 
-    
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next__main',
-        prevEl: '.swiper-button-prev__main',
-    },
 
-});
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next__main',
+            prevEl: '.swiper-button-prev__main',
+        },
+
+    });
 }
 
 
 let swiper2 = document.querySelector('.swiper__offers');
 if (swiper2) {
-const swiperOffers = new Swiper('.swiper__offers', {
-    loop: false,
-    speed: 1000,
-    slidesPerView: 4,
-    spaceBetween: 20,
+    const swiperOffers = new Swiper('.swiper__offers', {
+        loop: false,
+        speed: 1000,
+        slidesPerView: 4,
+        spaceBetween: 20,
 
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
 
+            },
+            640: {
+                slidesPerView: 2,
+
+            },
+            1024: {
+                slidesPerView: 4,
+
+            }
         },
-        640: {
-            slidesPerView: 2,
-
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next__offers',
+            prevEl: '.swiper-button-prev__offers',
         },
-        1024: {
-            slidesPerView: 4,
 
-        }
-    },
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next__offers',
-        prevEl: '.swiper-button-prev__offers',
-    },
-
-});
+    });
 }
 let swiper3 = document.querySelector('.sales .swiper__offers');
 if (swiper3) {
-const swiperSales = new Swiper('.sales .swiper__offers', {
-    loop: false,
-    speed: 1000,
-    slidesPerView: 4,
-    spaceBetween: 20,
+    const swiperSales = new Swiper('.sales .swiper__offers', {
+        loop: false,
+        speed: 1000,
+        slidesPerView: 4,
+        spaceBetween: 20,
 
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
 
+            },
+            640: {
+                slidesPerView: 2,
+
+            },
+            1024: {
+                slidesPerView: 4,
+
+            }
         },
-        640: {
-            slidesPerView: 2,
 
+        // Navigation arrows
+        navigation: {
+            nextEl: '.sales .swiper-button-next',
+            prevEl: '.sales .swiper-button-prev',
         },
-        1024: {
-            slidesPerView: 4,
 
-        }
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.sales .swiper-button-next',
-        prevEl: '.sales .swiper-button-prev',
-    },
-
-});
+    });
 }
 let swiper4 = document.querySelector('.new-products .swiper__offers');
 if (swiper4) {
-const swiperNewProducts = new Swiper('.new-products .swiper__offers', {
-    loop: false,
-    speed: 1000,
-    slidesPerView: 4,
-    spaceBetween: 20,
+    const swiperNewProducts = new Swiper('.new-products .swiper__offers', {
+        loop: false,
+        speed: 1000,
+        slidesPerView: 4,
+        spaceBetween: 20,
 
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
 
+            },
+            640: {
+                slidesPerView: 2,
+
+            },
+            1024: {
+                slidesPerView: 4,
+
+            }
         },
-        640: {
-            slidesPerView: 2,
 
+        // Navigation arrows
+        navigation: {
+            nextEl: '.new-products .swiper-button-next',
+            prevEl: '.new-products .swiper-button-prev',
         },
-        1024: {
-            slidesPerView: 4,
 
-        }
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.new-products .swiper-button-next',
-        prevEl: '.new-products .swiper-button-prev',
-    },
-
-});
+    });
 }
 const swiperVideo = new Swiper('.swiper__video', {
     loop: false,
@@ -259,56 +259,56 @@ const tabs = document.querySelectorAll(".contacts__tab");
 const contents = document.querySelectorAll(".contacts__content");
 if (tabs) {
 
-// запускаем цикл для каждой вкладки и добавляем на неё событие
-for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener("click", (event) => {
+    // запускаем цикл для каждой вкладки и добавляем на неё событие
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].addEventListener("click", (event) => {
 
-        let tabsChildren = event.target.parentElement.children;
-        for (let t = 0; t < tabsChildren.length; t++) {
-            tabsChildren[t].classList.remove("contacts__tab--active");
-        }
-        // добавляем активный класс
-        tabs[i].classList.add("contacts__tab--active");
-        // теперь нужно удалить активный класс с блоков содержимого вкладок
-        let tabContentChildren = event.target.parentElement.nextElementSibling.children;
-        for (let c = 0; c < tabContentChildren.length; c++) {
-            tabContentChildren[c].classList.remove("contacts__content--active");
-        }
-        // добавляем активный класс
-        contents[i].classList.add("contacts__content--active");
+            let tabsChildren = event.target.parentElement.children;
+            for (let t = 0; t < tabsChildren.length; t++) {
+                tabsChildren[t].classList.remove("contacts__tab--active");
+            }
+            // добавляем активный класс
+            tabs[i].classList.add("contacts__tab--active");
+            // теперь нужно удалить активный класс с блоков содержимого вкладок
+            let tabContentChildren = event.target.parentElement.nextElementSibling.children;
+            for (let c = 0; c < tabContentChildren.length; c++) {
+                tabContentChildren[c].classList.remove("contacts__content--active");
+            }
+            // добавляем активный класс
+            contents[i].classList.add("contacts__content--active");
 
-    });
-}
+        });
+    }
 }
 
 const tabsProduct = document.querySelectorAll(".product-main__tab");
 const contentsProduct = document.querySelectorAll(".product-main__content");
 if (tabsProduct) {
     console.log(tabsProduct);
-    
-for (let i = 0; i < tabsProduct.length; i++) {
-    tabsProduct[i].addEventListener("click", (event) => {
 
-        let tabsChildren = event.target.parentElement.children;
-        for (let t = 0; t < tabsChildren.length; t++) {
-            tabsChildren[t].classList.remove("product-main__tab--active");
-        }
-        // добавляем активный класс
-        tabsProduct[i].classList.add("product-main__tab--active");
-        // теперь нужно удалить активный класс с блоков содержимого вкладок
-        let tabContentChildren = event.target.parentElement.nextElementSibling.children;
-        for (let c = 0; c < tabContentChildren.length; c++) {
-            tabContentChildren[c].classList.remove("product-main__content--active");
-        }
-        // добавляем активный класс
-        contentsProduct[i].classList.add("product-main__content--active");
+    for (let i = 0; i < tabsProduct.length; i++) {
+        tabsProduct[i].addEventListener("click", (event) => {
 
-    });
-}
+            let tabsChildren = event.target.parentElement.children;
+            for (let t = 0; t < tabsChildren.length; t++) {
+                tabsChildren[t].classList.remove("product-main__tab--active");
+            }
+            // добавляем активный класс
+            tabsProduct[i].classList.add("product-main__tab--active");
+            // теперь нужно удалить активный класс с блоков содержимого вкладок
+            let tabContentChildren = event.target.parentElement.nextElementSibling.children;
+            for (let c = 0; c < tabContentChildren.length; c++) {
+                tabContentChildren[c].classList.remove("product-main__content--active");
+            }
+            // добавляем активный класс
+            contentsProduct[i].classList.add("product-main__content--active");
+
+        });
+    }
 }
 let select = document.querySelectorAll('select');
-if (select) {
-customSelect('select');
+if (select.length) {
+    customSelect('select');
 }
 
 
@@ -333,24 +333,51 @@ let filterBtn = document.querySelector('#filters-open');
 let filters = document.querySelector('#filters');
 let filtersMobile = document.querySelector('.filters--mobile');
 if (filtersMobile) {
-let filtersSelect = filtersMobile.querySelector('.custom-select-opener');
+    let filtersSelect = filtersMobile.querySelector('.custom-select-opener');
 }
 if (filterBtn) {
-filterBtn.addEventListener('click', function() {
-    filters.classList.toggle('filters__options--mobile-open');
+    filterBtn.addEventListener('click', function () {
+        filters.classList.toggle('filters__options--mobile-open');
 
-})
-filtersSelect.addEventListener('click', function () {
-    
-    filters.classList.remove('filters__options--mobile-open');
+    })
+    filtersSelect.addEventListener('click', function () {
 
-})
+        filters.classList.remove('filters__options--mobile-open');
+
+    })
 }
 let fancy = document.querySelectorAll('data-fancybox');
-if (fancy) {
+if (fancy.length) {
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
     });
 }
+
+let radioBtns1 = document.querySelectorAll('input[name="payment"]');
+console.log(radioBtns1);
+let radioBtns2 = document.querySelectorAll('input[name="delivery"]');
+radioBtns1.forEach(function (elem) {
+    elem.addEventListener('click', function () {
+        radioBtns1.forEach(function (item) {
+            item.parentElement.parentElement.classList.remove('radio--active');
+
+        })
+        if (elem.checked) {
+            elem.parentElement.parentElement.classList.add('radio--active');
+        }
+    });
+})
+radioBtns2.forEach(function (elem) {
+    elem.addEventListener('click', function () {
+        radioBtns2.forEach(function (item) {
+            item.parentElement.parentElement.classList.remove('radio--active');
+
+        })
+        if (elem.checked) {
+            elem.parentElement.parentElement.classList.add('radio--active');
+        }
+    });
+})
+
 
 
