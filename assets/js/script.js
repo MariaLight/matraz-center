@@ -167,7 +167,7 @@ const swiperBrands = new Swiper('.swiper__brands', {
         },
         640: {
             slidesPerView: 3,
-            spaceBetween: 24,
+            spaceBetween: 24
 
 
         },
@@ -177,6 +177,10 @@ const swiperBrands = new Swiper('.swiper__brands', {
 
 
         }
+    },
+    pagination: {
+        el: '.brands .swiper-pagination',
+        clickable: true
     },
 
     // Navigation arrows
@@ -346,7 +350,8 @@ if (filterBtn) {
 
     })
 }
-let fancy = document.querySelectorAll('data-fancybox');
+let fancy = document.querySelectorAll('[data-fancybox]');
+console.log(fancy);
 if (fancy.length) {
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
