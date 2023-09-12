@@ -5169,8 +5169,10 @@ input[type="checkbox"]:checked::before {
         margin-right: .3rem;
         padding-right: 1.1rem;
         position: relative;
-        margin-bottom: .5rem;
     }
+        .breadcrumbs__item {
+        margin-bottom: .5rem;
+        }
 
     .product-main__header {
         flex-direction: column;
@@ -6566,9 +6568,9 @@ input::-webkit-inner-spin-button {
     }
 }
 
-.custom-select-container {
+/* .custom-select-container {
     z-index: 30;
-}
+} */
 
 
 /* Статья */
