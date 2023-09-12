@@ -7193,21 +7193,21 @@ input[type="radio"]:checked::before {
     .pagination__item--next .pagination__link {
         gap: 1rem;
     }
-        .contacts__container--tabs::-webkit-scrollbar {
+        .contacts__container--tabs::-webkit-scrollbar, .product-main__container--tabs::-webkit-scrollbar {
             height: .8rem;
         }
     
-        .contacts__container--tabs::-webkit-scrollbar-track {
+        .contacts__container--tabs::-webkit-scrollbar-track, .product-main__container--tabs::-webkit-scrollbar-track {
             background-color: var(--color-bg-pink);
             border-radius: var(--border-radius-250);
         }
     
-        .contacts__container--tabs::-webkit-scrollbar-thumb {
+        .contacts__container--tabs::-webkit-scrollbar-thumb, .product-main__container--tabs::-webkit-scrollbar-thumb {
             background-color: var(--color-magenta);
             border-radius: var(--border-radius-250);
         }
     
-        .contacts__container--tabs {
+        .contacts__container--tabs, .product-main__container--tabs {
             padding-bottom: 1.2rem;
             max-width: 100%;
             overflow-x: auto;
