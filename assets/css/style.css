@@ -709,11 +709,11 @@ p {
 }
 
 .swiper-slide__main:nth-child(3) .main-banner__img {
-    background: url(../img/banner/img3.jpg);
+    background-image: url(../img/banner/img3.jpg);
 }
 
 .swiper-slide__main:nth-child(2) .main-banner__img {
-    background: url(../img/banner/img2.jpg);
+    background-image: url(../img/banner/img2.jpg);
 }
 
 .main-banner__img::after {
