@@ -384,5 +384,24 @@ radioBtns2.forEach(function (elem) {
     });
 })
 
+let headerSearchBtn = document.querySelector('#header-search__btn');
+let headerSearch = document.querySelector('.header-search__wrapper');
+
+headerSearchBtn.addEventListener('click', function(){
+    headerSearch.classList.add('header-search__wrapper--active');
+    
+
+})
+document.onclick = function (e) {
+    const target = e.target;
+    const its_search = target == headerSearch || headerSearch.contains(target);
+    const search_is_active = headerSearch.classList.contains("header-search__wrapper--active");
+
+    if (!its_search  && search_is_active) {
+        headerSearch.classList.remove('header-search__wrapper--active');
+
+    }
+};
+
 
 
