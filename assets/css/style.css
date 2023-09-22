@@ -7394,3 +7394,124 @@ input[type="radio"]:checked::before {
 .custom-select-option {
     border-bottom: 1px solid #FFEEF2;
 }
+
+
+
+/* 404 */
+.error {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(180deg, rgba(252, 155, 179, 0.37) -35%, rgba(229, 12, 79, 0.54) 100%), #FFF;
+}
+
+.error__inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 6rem;
+    margin: auto;
+}
+
+.error__title {
+    color: var(--color-magenta);
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 20rem;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-transform: uppercase;
+}
+
+.error__subtitle {
+    color: #FFF;
+        font-family: Montserrat;
+        font-size: 3.25rem;
+        font-style: normal;
+        text-align: center;
+        margin-top: -3rem;
+        font-weight: 800;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+}
+
+.error__text {
+    color: #FFF;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 2.125rem;
+}
+
+.error__btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1.5rem 3.5rem;
+}
+
+@media (max-width: 1024px) {
+    .error__inner {
+            padding-top: 6rem;
+        }
+    
+        .error__title {
+            font-size: 25rem;
+        }
+    
+        .error__subtitle {
+            
+            font-size: 4rem;
+            margin-top: -3rem;
+            margin-bottom: 6rem;
+        }
+    
+        .error__text {
+            font-size: 2rem;
+            margin-bottom: 6rem;
+            max-width: 35rem;
+            margin-left: auto;
+            margin-right: auto
+
+        }
+    
+        .error__btn {
+            padding: 2.4rem 5.6rem;
+        }
+}
+
+@media (max-width: 640px) {
+    .error__inner {
+        padding-top: 6rem;
+    }
+
+    .error__title {
+        font-size: 12.4rem;
+    }
+
+    .error__subtitle {
+
+        font-size: 2rem;
+        margin-top: -1rem;
+        margin-bottom: 4.5rem;
+    }
+
+    .error__text {
+        font-size: 1.4rem;
+        margin-bottom: 3.5rem;
+        max-width: 25rem;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .error__btn {
+        padding: 1.75rem 4.2rem;
+    }
+}
